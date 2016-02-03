@@ -28,6 +28,8 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 //import org.apache.log4j.xml.DOMConfigurator;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
@@ -38,7 +40,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-//import com.alibaba.fastjson.JSON;
+
+import demo.bean.SimpleBean;
 
 @Controller
 public class SimpleController {
@@ -49,12 +52,28 @@ public class SimpleController {
 	//SimpleDateFormat ISO_time_format=null;
 
 	
+	SimpleBean sb1;
+	SimpleBean sb2;
+
 	public SimpleController() {
 		
 		System.out.println("SimpleController created .");
 	
 	}
 	
+
+	@Autowired(required=true) 
+	@Qualifier("helloBean1") 
+	public void setSb1(SimpleBean sb) {
+		System.out.println("setSb1(sb)");
+		this.sb1 = sb;
+	}
+	@Autowired(required=true) 
+	@Qualifier("helloBean2") 
+	public void setSb2(SimpleBean sb) {
+		System.out.println("setSb2(sb)");
+		this.sb2 = sb;
+	}
 	//@SuppressWarnings("restriction")
 	//@PostConstruct
 	public void init() {

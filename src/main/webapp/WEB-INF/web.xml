@@ -14,7 +14,7 @@
 			<param-name>contextConfigLocation</param-name>
 
 			<param-value>
-				/WEB-INF/spring-conf/spring3-context.xml
+				/WEB-INF/spring-conf/spring3-*.xml
 			</param-value>
 
 			<!-- <param-value> classpath:WEB-INF/spring-conf/spring3-servlet.xml </param-value> -->

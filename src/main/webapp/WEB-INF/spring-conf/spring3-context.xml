@@ -52,22 +52,12 @@
 
 	<!--  业务beans -->
 
-	<bean id="helloBean" class="demo.bean.SimpleBean" init-method="init">
+	<bean id="helloBean1" class="demo.bean.SimpleBean" init-method="init">
 		<constructor-arg value="ylj" />
 		<property name="name" value="kitty" />
 	</bean>
 	
-	<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-		<property name="targetObject" ref="helloBean" />
-		<property name="targetMethod" value="say" />
-		<property name="arguments">
-			<list>
-				<value>hello im xxx</value>
-			<!-- 	<ref bean="wsdlUrl" />  -->
-			</list>
-		</property>
-	</bean>
-	
+
 
 	
 </beans>  

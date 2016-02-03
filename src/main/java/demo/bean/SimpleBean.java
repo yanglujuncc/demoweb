@@ -14,15 +14,16 @@ public class SimpleBean {
 	
 	public SimpleBean(){
 		instanceId=getInstanceId();
-		System.out.println("call SimpleBean(), instanceId:"+instanceId);
+		System.out.println("call SimpleBean(), instanceId:"+instanceId+" hashCode:"+this.hashCode());
 	}
 	public SimpleBean(String name){
+		instanceId=getInstanceId();
 		this.name=name;
-		System.out.println("call SimpleBean(name), instanceId:"+instanceId);
+		System.out.println("call SimpleBean(name), instanceId:"+instanceId+" hashCode:"+this.hashCode());
 	}
 	
 	public void setName(String name) {
-		System.out.println("call setName(name), instanceId:"+instanceId);
+		System.out.println("call setName(name), instanceId:"+instanceId+" hashCode:"+this.hashCode());
 		this.name = name;
 	}
 	public String getName(){
@@ -34,7 +35,7 @@ public class SimpleBean {
 
 	public void say(String content){
 		
-		System.out.println("call say(content) " +name+" say:"+content);
+		System.out.println("call say(content) " +name+" say:"+content+" hashCode:"+this.hashCode());
 	}
 	
 }
